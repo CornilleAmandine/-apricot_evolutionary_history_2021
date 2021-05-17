@@ -1,0 +1,15 @@
+# User: Shuo Liu
+# Name: liushuo028@163.com
+# Date: 2020.5-2020.11
+# Purpose of the scripts: infer the SMC++, using vcd as inputs. (SMC++ manual: https://github.com/popgenmethods/smcpp)
+
+## example, dataset = abc_182_CH_10; 
+## we first use vcf2smc function to convert the vcf.gz files into smc++ inputfiles.
+smc++ vcf2smc -d CH158_marouch_v3 CH158_marouch_v3 abc_182_CH_10_chr1.vcf.gz chr1.abc_182_CH_10_smc.gz_smc.gz 1 CH:CH158_marouch_v3,CH159_marouch_v3,CH178_marouch_v3,CH192_marouch_v3,CH198_marouch_v3,CH199_marouch_v3,CH203 2_marouch_v3,CH209_marouch_v3,CH222_marouch_v3,CH224_marouch_v3
+
+## then, we use the estimate function to calcualte the demorgraphy of one specified population, 4.6e-9 is the mutation rate in citation: Wang et al (2017) doi:10.3389/fpls.2017.01989
+smc++ estimate 4.6e-9 chr*.abc_182_CH_10_smc.gz_smc.gz --timepoints 30 100000
+
+## output the smc++ results
+mv model.final.json model.abc_182_CH_10_final.json
+smc++ plot abc_182_CH_10.pdf model.abc_182_CH_10_final.json -g 5 -c

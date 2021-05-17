@@ -1,0 +1,8 @@
+# User: Shuo Liu
+# Name: liushuo028@163.com
+# Date: 2020.5-2020.11
+# Purpose of the scripts: calculate the CLR statistics, using vcd as inputs. (Sweed 3.0 manual: https://github.com/alachins/sweed/blob/master/sweed3.0_manual.pdf)
+
+
+## example, we set <-grid> 4442 to specify the intervals to infer the CLR value on chromosome 1 
+SweeD -name ss_169_C1_chr1 -input ss_169_C1_chr1.recode.vcf -grid 4442 -osfs ss169_C1_chr1    

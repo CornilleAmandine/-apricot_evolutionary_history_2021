@@ -1,0 +1,10 @@
+# User: Shuo Liu
+# Name: liushuo028@163.com
+# Date: 2020.5-2020.11
+# Purpose of the scripts: make a PCA analysis, using PLINK-format as inputs. 
+
+## config_917.conf and runningpca_917.conf are necessary for smartPCA (http://gensoft.pasteur.fr/docs/EIGENSOFT/6.1.4)
+
+module load eigensoft/6.1.4
+convertf -p config_917.conf
+smartpca -p runningpca_917.conf

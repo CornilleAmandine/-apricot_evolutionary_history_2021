@@ -1,0 +1,3 @@
+BEAST v2.6.2 :
+
+beast -threads 20 4D_sites_Yule.xml

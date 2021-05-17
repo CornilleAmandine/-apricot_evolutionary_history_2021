@@ -1,0 +1,7 @@
+# User: Shuo Liu
+# Name: liushuo028@163.com
+# Date: 2020.5-2020.11
+# Purpose of the scripts: calculate the omega statistics, using vcd as inputs. (Omegaplus: https://github.com/alachins/omegaplus)
+
+## example,we set <-grid> 4442 to specify the intervals to infer the omega value on chromosome 1, and set LD parameters following <-minwin 100 -maxwin 5000>
+OmegaPlus -all -name ss_169_C1_chr1 -input ss_169_C1_50_chr1.recode.vcf -ld RSQUARE -minwin 100 -maxwin 5000 -grid 4442 -seed 123456789
