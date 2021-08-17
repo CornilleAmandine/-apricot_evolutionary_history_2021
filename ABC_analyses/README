@@ -1,5 +1,0 @@
-#To launch ABCtoobox for sc1 for instance
-
-cd sc1
-./launch_ABCtoolBox.sh
-cd ..
