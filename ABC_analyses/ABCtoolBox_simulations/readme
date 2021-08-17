@@ -1,0 +1,4 @@
+#To launch the simulations
+./launch_ABCtoolBox.sh
+
+Note: the script to be adapt to the cluster queuing system.
