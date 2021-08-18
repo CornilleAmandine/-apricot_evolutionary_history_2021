@@ -1,4 +1,5 @@
-Scripts used for population genomics analyses of the ms "XXX"
+Scripts used for population genomics analyses of the ms:
 
--For the fastSTRUCTURE analyses
--For the approximate Bayesian computation analyses
+Population genomics of apricots unravels domestication history and adaptive events
+https://www.nature.com/articles/s41467-021-24283-6 
+
