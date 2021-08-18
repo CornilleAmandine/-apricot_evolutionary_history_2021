@@ -1,4 +1,33 @@
 #To launch the simulations
+
 ./launch_ABCtoolBox.sh
 
-Note: the script to be adapt to the cluster queuing system.
+Notes: 
+1- the script have to be adapted to the cluster queuing system;
+2- You can run in parallel each scenario to get simulations quicker. 
+Here an example to submit jobs in parallel for sc1, and then compile the outputs (out_sampling1.txt) one the simulations are done:
+
+#1. Launch in parallel simulation for sc1 (the sc1_1 is the folder sc1 - see the ABC/ABC_simualtions/ Github folder - that you will rename sc1_1 before launching this script):
+
+cd sc1/
+for i in $(seq 2 80)
+  do cp -rf sc1_1 sc1_$i
+done
+for i in $(seq 1 80)
+  do cd sc1_$i
+     sbatch submit.sh
+     cd .. 
+done
+
+#2. After simulations are done : merge all your simulations into one single file "res_sc1_005.txt", for example
+
+cd /dir/
+for j in $(seq 1)
+  do cd sc1_005/
+     head -n 1 sc1_005_1/out_sampling1.txt > res_sc1_005.txt
+        for i in $(seq 1 80)
+          do tail -n +2 sc1_005_$i/out_sampling1.txt >> res_sc1_005.txt
+          cp res_sc1_005.txt /dir/
+        done
+     cd ..
+done
